@@ -9,8 +9,9 @@
 
 @import 'normalize';
 @import 'typography';
+@import 'variables';
 @import 'navigation';
-@import 'sidebar';
+// @import 'sidebar';
 @import 'comments';
 @import 'footer';
 /*
@@ -27,21 +28,28 @@ body {
 	color: #333;
 }
 
-.container {
+.wrapper {
 	max-width: 1200px;
+	width: 80%;
 	margin: 0 auto;
 }
 
-.content {
-	float: left;
-	width: 65%;
-	margin-right: 5%;
-}
+// CONTACT SECTION //
+.contact {
+	.contactContainer {
+		display: flex;
+		.contactInfo {
+			width: 30%;
+			.fa {
+				color: $orchid;
+			}
+		}
+		.contactForm {
+			width: 70%;
+		}
+	}
 
-.full {
-	width: 100%;
 }
-
 
 
 
