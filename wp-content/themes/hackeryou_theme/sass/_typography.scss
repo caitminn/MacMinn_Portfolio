@@ -1,15 +1,52 @@
-a {
-	color: #BA209B;
-	text-decoration: none;
-	&:hover {
-		color: #D424B1;
+html {
+	font-size: 62.5%;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: $darkgray;
+	font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    &:after {
+    content:"";
+    width: 5%;
+    height: 3px;
+    margin: auto;
+    background: $orchid;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -15px;
 	}
 }
 
+h3 {
+	font-size: 20px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+h4 {
+	text-align: center;
+}
+
+
+
 /* paragraphs */
 
-p {
+p, span {
+	font-size: 1.4rem;
 	line-height: 1.5;
+}
+
+/*lists*/
+
+ul li, ol li {
+	font-size: 1.4rem;
+	
 }
 
 /*blockquotes*/
@@ -23,36 +60,25 @@ blockquote {
 	}
 }
 
-/*tables*/
-
-table {
-	td {
-		padding: 10px;
-	}
-	tr td:first {
-		padding-right: 0;
-	}
-}
-
-/*def lists*/
-
-dt {
-	font-weight: 600;
-	padding-bottom: 5px;
-}
-
-dd {
+/*buttons*/
+button {
 	padding: 10px;
-	margin-left: 10px;
+	align-self: flex-end;
+	border: 2px solid $orchid;
+	border-radius: 2px;
+	background: rgba(255, 255, 255, 0);
+	box-shadow: rgba(128, 128, 128, 0.25) 1px 1px 0.5px;
+	color: $orchid;
+	font-size: 1.6rem;
+	transition: all 0.3s ease;
+	&:hover {
+		background: $orchid;
+		color: $white;
+	}
 }
 
-/*lists*/
 
-ul li, ol li {
-	padding: 3px;
-}
-
-/*PRE*/
+PRE
 
 pre {
 	background: #F7F7F7;
@@ -88,10 +114,4 @@ img {
 	&.alignright {
 		padding-left: 5px;
 	}
-}
-
-.clear {
-	width: 100%;
-	float: left;
-	clear: both;
 }
