@@ -11,14 +11,19 @@ if(have_posts()) {
 		<?php 
 		$heroImage = get_field('hero_image');
 		?>
-<header style='background: url("<?php echo $heroImage['url']?>") center center no-repeat; background-size: cover'>
+<header style='background: linear-gradient(45deg, rgba(173, 133, 181, 0.65) 23%,rgba(181, 99, 159, 0.65) 77%), url("//localhost:3000/macminnPortfolio/wp-content/uploads/2016/06/blackWhite.png") center center no-repeat;'>
 
-	<nav class="mainNav">
-	  <?php wp_nav_menu( array(
-	    'container' => false,
-	    'theme_location' => 'primary'
-	  )); ?>
+	<nav class="mainNav" id='mainNav'>
+		<h3><?php the_field('nav_name'); ?></h3>
+		<?php wp_nav_menu( array(
+		    'container' => true,
+		    'theme_location' => 'primary'
+		)); ?>
 	</nav>
+	<section class='heroText'>
+		<h1 class='animated fadeIn'><?php the_field('hero_text'); ?></h1>
+		<h3 class='animated fadeIn'><?php the_field('job_title'); ?></h3>
+	</section>
 </header>
 
 <section class='about' id='about'>
@@ -89,42 +94,34 @@ if(have_posts()) {
 		<div class='skill'>
 			<span><?php the_field('skill1_icon'); ?></span>
 			<h4><?php the_field('skill1_title'); ?><h4>
-			<p><?php the_field('skill1_description'); ?><p>
 		</div>
 		<div class='skill'>
 			<span><?php the_field('skill2_icon'); ?></span>
 			<h4><?php the_field('skill2_title'); ?><h4>
-			<p><?php the_field('skill2_description'); ?><p>
 		</div>
 		<div class='skill'>
 			<span><?php the_field('skill3_icon'); ?></span>
 			<h4><?php the_field('skill3_title'); ?><h4>
-			<p><?php the_field('skill3_description'); ?><p>
 		</div>
 		<div class='skill'>
 			<span><?php the_field('skill4_icon'); ?></span>
 			<h4><?php the_field('skill4_title'); ?><h4>
-			<p><?php the_field('skill4_description'); ?><p>
 		</div>
 		<div class='skill'>
 			<span><?php the_field('skill5_icon'); ?></span>
 			<h4><?php the_field('skill5_title'); ?><h4>
-			<p><?php the_field('skill5_description'); ?><p>
 		</div>
 		<div class='skill'>
 			<span><?php the_field('skill6_icon'); ?></span>
 			<h4><?php the_field('skill6_title'); ?><h4>
-			<p><?php the_field('skill6_description'); ?><p>
 		</div>
 		<div class='skill'>
 			<span><?php the_field('skill7_icon'); ?></span>
 			<h4><?php the_field('skill7_title'); ?><h4>
-			<p><?php the_field('skill7_description'); ?><p>
 		</div>
 		<div class='skill'>
 			<span><?php the_field('skill8_icon'); ?></span>
 			<h4><?php the_field('skill8_title'); ?><h4>
-			<p><?php the_field('skill8_description'); ?><p>
 		</div>
 	</section>
 </section>
@@ -135,16 +132,16 @@ if(have_posts()) {
 		<aside class='contactInfo'>
 			<h3><?php the_field('contact_info'); ?></h3>
 			<span>
-				<i class="fa fa-map-marker" aria-hidden="true"></i>
-				<?php the_field('address'); ?>
+				<div class='icon'><i class="fa fa-map-marker fa-lg" aria-hidden="true"></i></div>
+				<p><?php the_field('address'); ?></p>
 			</span>
 			<span>
-				<i class="fa fa-envelope" aria-hidden="true"></i>
-				<?php the_field('email_address'); ?>
+				<div class='icon'><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></div>
+				<p><?php the_field('email_address'); ?></p>
 			</span>
 			<span>
-				<i class="fa fa-mobile" aria-hidden="true"></i>
-				<?php the_field('telephone'); ?>
+				<div class='icon'><i class="fa fa-mobile fa-lg" aria-hidden="true"></i></div>
+				<p><?php the_field('telephone'); ?></p>
 			</span>
 		</aside>
 		<section class='contactForm'>
