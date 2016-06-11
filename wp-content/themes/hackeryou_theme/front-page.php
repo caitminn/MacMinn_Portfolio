@@ -14,6 +14,7 @@ if(have_posts()) {
 <header style='background: linear-gradient(45deg, rgba(173, 133, 181, 0.65) 23%,rgba(181, 99, 159, 0.65) 77%), url("//localhost:3000/macminnPortfolio/wp-content/uploads/2016/06/blackWhite.png") center center no-repeat;'>
 
 	<nav class="mainNav" id='mainNav'>
+		<div class="fa fa-bars fa-2x"></div>
 		<h3><?php the_field('nav_name'); ?></h3>
 		<?php wp_nav_menu( array(
 		    'container' => true,

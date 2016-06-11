@@ -8,6 +8,12 @@ $(function(){
 	    }
 	});
 
+	$('.fa-bars').on('click', function() {
+		// We need to display flex the main nav
+		console.log('Hi!');
+		$('#menu-main-navigation').toggleClass('show');
+	});
+
 	console.log("It's working");
 
 });

@@ -53,6 +53,17 @@ header {
 		display: flex;
 		justify-content: space-between;
 		transition: all 0.8s ease;
+		// HAMBURGER //
+		.fa {
+			display: none;
+			cursor: pointer;
+		}
+
+		.fa-bars {
+			position: relative;
+			z-index: 10;
+		}
+		// MAIN NAV //
 		h3 {
 			// padding: 20px;
 			visibility: hidden;
@@ -70,7 +81,7 @@ header {
 					font-size: 1.4rem;
 					letter-spacing: 0.1rem;
 					font-weight: 500;
-					text-shadow: rgba(128,128,128,0.7) 1px 1px 1px;
+					// text-shadow: rgba(128,128,128,0.7) 1px 1px 1px;
 					&:hover {
 						color: $orchid;
 						background: $darkgray;
@@ -285,7 +296,6 @@ header {
 					    line-height: 1.5rem;
 					    color: $darkgray;
 					}
-
 				}
 				.formMessage {
 					p {
@@ -324,7 +334,6 @@ header {
 	}
 }
 
-
 // SOCIAL FOOTER //
 .socialFooter {
 	margin: 0 auto;
@@ -358,10 +367,120 @@ footer {
 	background: $darkgray;
 	color: $white;
 	text-align: center;
-
 }
 
+/* Portrait tablet and small desktops */
+@media (max-width: 940px) {
+	.wrapper {
+		width: 90%;
+	}
+	header {
+		height: auto;
 
+		// HAMBURGER MENU //
+		ul#menu-main-navigation {
+			position: fixed;
+			top: 0;
+			right: 0;
+			height: 100%;
+			width: 100%;
+			background: rgba(255,255,255,0.8);
+			opacity: 0;
+			visibility: hidden;
+			flex-flow: column wrap;
+			text-align: center;
+			justify-content: space-around;
+			transition: all 0.5s;
+			transform: scale(1.2);
+			z-index: 99;
+			li {
+				padding: 15px 0;
+				font-size: 2rem;
+			}
+				a {
+					color: $orchid;
+				}
+		}
+		ul#menu-main-navigation.show {
+			opacity: 1;
+			visibility: visible;
+			transform: scale(1);
+		}
+
+		.fa {
+			display: none;
+			cursor: pointer;
+		}
+
+		.fa-bars {
+			position: relative;
+			z-index: 100;
+		}
+		// END HAMBURGER //
+	}
+	.about {
+	    flex-direction: column;
+	    align-items: center;
+	    justify-content: space-around;
+	    .aboutContainer {
+	    	.headshot {
+	    	    width: 100%;
+	    	    margin: 0 auto;
+	    	}
+	    	.aboutDesc {
+	    	    width: 100%;
+	    	}
+	    }
+	}
+	.portfolioItem {
+	    flex-direction: column;
+	    figure {
+	    	width: 100%;
+	    }
+	    .portfolioContent {
+	    	width: 100%;
+		}
+    }
+	.contactContainer {
+	    flex-direction: column;
+	    .contactInfo {
+		    width: 100%;
+	    }
+	    .contactForm {
+	        width: 100%;
+
+			form {
+				.formInputs {
+					input[type=text], input[type=email] {
+						width: 300px;
+					}
+				}
+				.formMessage {
+					textarea {
+						width: 100%;
+						margin-top: 5px;
+						height: auto;
+						padding: 5px 10px;
+						border: 2px solid $orchid;
+					    border-radius: 2px;
+					    font-size: 1.4rem;
+					    line-height: 1.5rem;
+					    color: $darkgray;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+	
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+}
 
 
 
