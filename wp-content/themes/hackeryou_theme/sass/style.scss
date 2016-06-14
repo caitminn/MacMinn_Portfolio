@@ -53,6 +53,8 @@ header {
 		display: flex;
 		justify-content: space-between;
 		transition: all 0.8s ease;
+		z-index: 100;
+
 		// HAMBURGER //
 		.fa {
 			display: none;
@@ -90,15 +92,12 @@ header {
 		}
 	}
 
-	
-
 	.active {
 	    padding: 10px 20px;
 		background: $darkgray;
 		transition: all 0.8s ease;
 		z-index: 9;
 		h3 {
-			// padding: 20px;
 			visibility: visible;
 			color: $orchid;
 			&:hover {
@@ -203,24 +202,21 @@ header {
 			}
 			.portfolioContent {
 				width: 50%;
-				padding: 30px 0;
-				padding-left: 20px;
+				padding: 30px;
 				display: flex;
 				flex-direction: column;
 			    justify-content: space-between;
+			    align-items: flex-start;
 				background: rgba(173, 133, 181, 0.2);
 				ul {
 					display: flex;
 					flex-wrap: wrap;
 					li {
-						margin: 5px;
+					    margin: 5px 10px 5px 0;
 						padding: 5px;
 						list-style-type: none;
 						background: rgba(214, 168, 202, 0.5);
 						border-radius: 2px;
-					}
-					li:first-child {
-						margin-left: 0;
 					}
 				}
 			}
@@ -306,7 +302,8 @@ header {
 			}
 		}
 		.contactForm {
-			width: 70%;
+			width: calc(70% - 10px);
+			margin-left: 10px;
 			form {
 				.formInputs {
 					display: flex;
@@ -325,11 +322,11 @@ header {
 					    line-height: 1.5rem;
 					    color: $darkgray;
 					}
-					input[type=text] {
-						margin-right: 10px;
-					}
-					input[type=email] {
-						margin-left: 10px;
+					input[type=text], input[type=email] {
+						outline: none;
+						&:focus {
+							border:2px solid $blush;
+						}
 					}
 				}
 				.formMessage {
@@ -362,6 +359,12 @@ header {
 						&:hover {
 							background: $orchid;
 							color: $white;
+						}
+					}
+					textarea, input[type=submit] {
+						outline: none;
+						&:focus {
+							border:2px solid $blush;
 						}
 					}
 				}
@@ -417,26 +420,17 @@ footer {
 
 
 /* Portrait tablet and small desktops */
-@media (max-width: 940px) {
+@media (max-width: 1040px) {
+	// GENERAL //
 	.wrapper {
 		width: 90%;
 	}
 	
-	.active {
-	    padding: 0;
-		background: none;
-		transition: none;
-		z-index: 0;
-		h3 {
-			visibility: hidden;
-			color: $orchid;
-		}
-	}
-
-	// HEADER SECTION //
 	header {
 		height: auto;
 	}
+
+	// HEADER SECTION //
 	header .mainNav .fa {
 		// display: none;
 		display: block;
@@ -444,13 +438,13 @@ footer {
 	}
 	
  	// HAMBURGER MENU //
-	header ul#menu-main-navigation {
+	header .mainNav ul#menu-main-navigation {
 		position: fixed;
 		top: 0;
 		right: 0;
-		height: 50%;
+		height: auto;
 		width: 100%;
-		background: rgba(68, 68, 68, 0.9);
+		background: rgba(184, 184, 184, 0.85);
 		opacity: 0;
 		visibility: hidden;
 		flex-flow: column wrap;
@@ -458,7 +452,7 @@ footer {
 		justify-content: space-around;
 		transition: all 0.5s;
 		transform: scale(1.2);
-		z-index: 900;
+		z-index: 5;
 		li {
 			padding: 15px 0;
 			font-size: 2rem;
@@ -477,14 +471,15 @@ footer {
 	}
 
 	header .fa-bars {
-		font-size: 2.5rem;
+		font-size: 2.8rem;
 		position: relative;
-		z-index: 999;
+		z-index: 10;
 	}
 	// END HAMBURGER //
+
 	header .heroText {
 		height: 90vh;
-		z-index: 5;
+		// z-index: 5;
 		h1 {
 			font-size: 8rem;
 			z-index:1;
@@ -536,7 +531,11 @@ footer {
         .portfolioContainer .portfolioItem:nth-child(even) {
             flex-direction: column;
         }
+        .portfolioContainer .portfolioItem:nth-child(even) .portfolioContent {
+	    	padding-right: 20px;
+    	}
 	}
+
 	// CONTACT SECTION //
 	.contact {
 		.contactContainer {
@@ -563,55 +562,15 @@ footer {
 	}
 }
 
-	// 	// HAMBURGER MENU //
-	// 	ul#menu-main-navigation {
-	// 		position: fixed;
-	// 		top: 0;
-	// 		right: 0;
-	// 		height: 100%;
-	// 		width: 100%;
-	// 		background: rgba(255,255,255,0.8);
-	// 		opacity: 0;
-	// 		visibility: hidden;
-	// 		flex-flow: column wrap;
-	// 		text-align: center;
-	// 		justify-content: space-around;
-	// 		transition: all 0.5s;
-	// 		transform: scale(1.2);
-	// 		z-index: 99;
-	// 		li {
-	// 			padding: 15px 0;
-	// 			font-size: 2rem;
-	// 		}
-	// 			a {
-	// 				color: $orchid;
-	// 			}
-	// 	}
-	// 	ul#menu-main-navigation.show {
-	// 		opacity: 1;
-	// 		visibility: visible;
-	// 		transform: scale(1);
-	// 	}
-
-	// 	.fa-bars {
-	// 		position: relative;
-	// 		z-index: 100;
-	// 	}
-	// 	// END HAMBURGER //
-	// }
-
-	
-
-
-	
-	
- 
-	
-
-
 //Landscape phone to portrait tablet
 @media (max-width: 768px) {
-	
+	// PORTFOLIO SECTION //
+	.portfolio {
+		.portfolioContainer .portfolioItem .portfolioContent {
+        	width: 100%;	
+        	min-height: 350px;
+        }
+	}
 	// CONTACT SECTION //
 	.contact {
 	    .contactContainer .contactForm {
@@ -630,11 +589,25 @@ footer {
 	}
 }
 
+// ADDITIONAL HERO BREAK POINT //
+@media (max-width: 600px) {
+	header .heroText {
+		height: 80vh;
+		// z-index: 5;
+		h1 {
+			font-size: 6rem;
+			z-index:1;
+		}
+		h3 {
+			font-size: 1.8rem;
+		}
+	}	
+}
 // Landscape phones and down
 @media (max-width: 480px) {
 	header .heroText {
 		height: 70vh;
-		z-index: 5;
+		// z-index: 5;
 		h1 {
 			font-size: 4rem;
 			z-index:1;

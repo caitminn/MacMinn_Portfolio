@@ -1,6 +1,6 @@
 <footer>
   <div class="container">
-    <p>&copy; Caitlin MacMinn <?php echo date('Y'); ?>. Icons provided by <a href="http://fontawesome.io/" target="_">Font Awesome</a> & <a href="http://vorillaz.github.io/devicons/#/main" target="_">Devicons</a>. Background pattern provided by <a href="http://subtlepatterns.com/" target="_">Subtle Patterns</a></p>
+    <p>&copy; Caitlin MacMinn <?php echo date('Y'); ?>. Icons by <a href="http://fontawesome.io/" target="_">Font Awesome</a> & <a href="http://vorillaz.github.io/devicons/#/main" target="_">Devicons</a>. Background pattern by <a href="http://subtlepatterns.com/" target="_">Subtle Patterns</a>. Head Shot courtesy of <a href="http://pamlau.com" target="_">Pam Lao</a>.</p>
   </div>
 </footer>
 
