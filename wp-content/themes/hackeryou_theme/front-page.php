@@ -11,7 +11,7 @@ if(have_posts()) {
 		<?php 
 		$heroImage = get_field('hero_image');
 		?>
-<header style='background: linear-gradient(45deg, rgba(173, 133, 181, 0.65) 23%,rgba(181, 99, 159, 0.65) 77%), url("//localhost:3000/macminnPortfolio/wp-content/uploads/2016/06/blackWhite.png") center center no-repeat;'>
+<header style='background: linear-gradient(45deg, rgba(173, 133, 181, 0.65) 23%,rgba(181, 99, 159, 0.65) 77%), url("<?php echo $heroImage['url'] ?>") center center no-repeat; background-size: cover;'>
 
 	<nav class="mainNav" id='mainNav'>
 		<div class="fa fa-bars fa-2x"></div>
@@ -37,6 +37,7 @@ if(have_posts()) {
 			<img src="<?php echo $headshot['url']?>" />
 		</aside>
 		<article class='aboutDesc'>
+			<h3><?php the_field('about_tagline'); ?></h3>
 			<p><?php the_field('about'); ?></p>
 		</article>
 	</section>
@@ -50,7 +51,7 @@ if(have_posts()) {
 			$portfolioArgs = array(
 				'post_type' => 'portfolio',
 				'posts_per_page' => -1,
-				'order' => 'ASC',
+				'order' => 'DESC',
 				// 'orderby' => 'title'
 			);
 			$portfolioQuery = new WP_Query($portfolioArgs);
@@ -77,7 +78,7 @@ if(have_posts()) {
 					}
 					?>
 			</ul>
-			<a href='<?php the_field("portfolio_item_link"); ?>'><button> View Live Project</button></a>
+			<a href='<?php the_field("portfolio_item_link"); ?>' target="_"><button> View Live</button></a>
 			</div>
 		</section>
 
@@ -124,6 +125,10 @@ if(have_posts()) {
 			<span><?php the_field('skill8_icon'); ?></span>
 			<h4><?php the_field('skill8_title'); ?><h4>
 		</div>
+		<div class='skill'>
+			<span><?php the_field('skill9_icon'); ?></span>
+			<h4><?php the_field('skill9_title'); ?><h4>
+		</div>
 	</section>
 </section>
 
@@ -141,8 +146,8 @@ if(have_posts()) {
 				<p><?php the_field('email_address'); ?></p>
 			</span>
 			<span>
-				<div class='icon'><i class="fa fa-mobile fa-lg" aria-hidden="true"></i></div>
-				<p><?php the_field('telephone'); ?></p>
+				<div class='icon'><i class="fa fa-arrow-down" aria-hidden="true"></i></i></div>
+				<p><?php the_field('resume_link'); ?></p>
 			</span>
 		</aside>
 		<section class='contactForm'>

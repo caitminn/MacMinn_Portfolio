@@ -65,7 +65,6 @@ header {
 		}
 		// MAIN NAV //
 		h3 {
-			// padding: 20px;
 			visibility: hidden;
 		}
 		ul {
@@ -74,14 +73,12 @@ header {
 				padding: 0 20px;
 				a {
 					padding: 10px;
-					// background: rgba(255, 255, 255, 0);
 					text-transform: uppercase;
 					text-decoration: none;
 					color: $white;
 					font-size: 1.4rem;
 					letter-spacing: 0.1rem;
 					font-weight: 500;
-					// text-shadow: rgba(128,128,128,0.7) 1px 1px 1px;
 					&:hover {
 						color: $orchid;
 						background: $darkgray;
@@ -92,6 +89,9 @@ header {
 			}
 		}
 	}
+
+	
+
 	.active {
 	    padding: 10px 20px;
 		background: $darkgray;
@@ -131,13 +131,12 @@ header {
 		justify-content: center;
 		align-items: center;
 		h1 {
-			font-family: 'Playfair Display', serif;
+			font-family: 'Kalam', cursive;
 			font-size: 10rem;
 		    color: $white;
 		    font-weight: 400;
 		    letter-spacing: 0.3rem;
 		    text-shadow: rgba(128,128,128,0.7) 1px 1px 1px;
-		    
 		}
 		h3 {
 			color: $white;
@@ -151,17 +150,36 @@ header {
 
 //ABOUT SECTION //
 .about {
+	background: url('images/shattered.png');
 	.aboutContainer {
 		display: flex;
+	    margin-bottom: 20px;
 		.headshot {
 			width: 30%;
+			padding: 10px;
 			img {
-				width: 70%;
+				box-shadow: rgba(128,128,128,0.7) 1px 1px 1px;
+				&::after {
+					content:"";
+					width: 100%;
+					height: 100%;
+					margin: auto;
+					background: linear-gradient(45deg, rgba(173, 133, 181, 0.65) 23%,rgba(181, 99, 159, 0.65) 77%);
+					position: absolute;
+					top: 0;
+					left: 0;
+				}
 			}
 		}
 		.aboutDesc {
 			width: calc(70% - 20px);
 			margin-left: 20px;
+			padding: 20px 0;
+			h3 {
+			    padding-bottom: 10px;
+			    font-family: 'Kalam', cursive;
+			    text-transform: none;
+			}
 		}
 	}
 }
@@ -177,7 +195,7 @@ header {
 			display: flex;
 			box-shadow: rgba(128, 128, 128, 0.25) 1px 1px 0.5px;
 			figure {
-				max-width: 50%;
+				width: 50%;
 				img {
 					width: 100%;
 					display: block;
@@ -195,10 +213,10 @@ header {
 					display: flex;
 					flex-wrap: wrap;
 					li {
-						margin: 10px;
-						padding: 10px;
+						margin: 5px;
+						padding: 5px;
 						list-style-type: none;
-						background: lighten($violet, 20);
+						background: rgba(214, 168, 202, 0.5);
 						border-radius: 2px;
 					}
 					li:first-child {
@@ -218,23 +236,24 @@ header {
 
 // SKILLS SECTION //
 .skills {
-	background: linear-gradient(0deg, rgba(255,255,255,0.6), rgba(255,255,255,0.9)), url('images/shattered.png');
-	// background: url('images/shattered.png');
+	background: url('images/shattered.png');
 	background-repeat: repeat;
 	.skillContainer {
 		display: flex;
 		flex-wrap: wrap;
 		.skill {
-			width: calc(25% - 40px);
+			width: calc(33.3% - 40px);
 			margin: 20px;
 			display: flex;
 			flex-direction: column;
+		    text-align: center;
 			span {
 				margin: 0 auto;
 				.devicons {
 					font-size: 7rem;
 					color: $orchid;
 					text-shadow: rgba(128, 128, 128, 0.25) 1px 1px 0.5px;
+				    text-align: center;
 				}
 			}
 			h4 {
@@ -252,8 +271,9 @@ header {
 			width: 30%;
 		    display: flex;
 		    flex-direction: column;
+	        position: relative;
 		    h3 {
-		    	margin-bottom: 25px;
+		    	margin-bottom: 45px;
 		    	
 		    }
 		    span {
@@ -275,6 +295,15 @@ header {
 				color: $orchid;
 				font-size: 2.5rem;
 			}
+			a {
+				color: $darkgray;
+				text-decoration: none;
+				&:hover {
+					cursor: pointer;
+					color: $orchid;
+				}
+
+			}
 		}
 		.contactForm {
 			width: 70%;
@@ -286,7 +315,7 @@ header {
 					    margin-top: 20px;
 					}
 					input[type=text], input[type=email] {
-						width: 350px;
+						width: calc(100% - 10px);
 						height: 35px;
 						margin-top: 5px;
 						padding: 5px 10px;
@@ -295,6 +324,12 @@ header {
 					    font-size: 1.4rem;
 					    line-height: 1.5rem;
 					    color: $darkgray;
+					}
+					input[type=text] {
+						margin-right: 10px;
+					}
+					input[type=email] {
+						margin-left: 10px;
 					}
 				}
 				.formMessage {
@@ -313,8 +348,8 @@ header {
 					    color: $darkgray;
 					}
 					input[type=submit] {
-						width: 150px;
-						padding: 10px;
+						width: 100px;
+						padding: 5px;
 						align-self: flex-end;
 						border: 2px solid $orchid;
 						border-radius: 2px;
@@ -322,6 +357,7 @@ header {
 						box-shadow: rgba(128, 128, 128, 0.25) 1px 1px 0.5px;
 						color: $orchid;
 						font-size: 1.6rem;
+						text-transform: uppercase;
 						transition: all 0.3s ease;
 						&:hover {
 							background: $orchid;
@@ -337,7 +373,6 @@ header {
 // SOCIAL FOOTER //
 .socialFooter {
 	margin: 0 auto;
-	background: linear-gradient(0deg, rgba(255,255,255,0.6), rgba(255,255,255,0.9)), url('images/shattered.png');
 	background: url('images/shattered.png');
 	background-repeat: repeat;
 	ul {
@@ -367,119 +402,247 @@ footer {
 	background: $darkgray;
 	color: $white;
 	text-align: center;
+	p {
+		font-size: 1.1rem;
+		a {
+			color: $white;
+			text-decoration: none;
+			&:hover {
+				cursor: pointer;
+				color: $orchid;
+			}
+		}
+	}
 }
+
 
 /* Portrait tablet and small desktops */
 @media (max-width: 940px) {
 	.wrapper {
 		width: 90%;
 	}
+	
+	.active {
+	    padding: 0;
+		background: none;
+		transition: none;
+		z-index: 0;
+		h3 {
+			visibility: hidden;
+			color: $orchid;
+		}
+	}
+
+	// HEADER SECTION //
 	header {
 		height: auto;
-
-		// HAMBURGER MENU //
-		ul#menu-main-navigation {
-			position: fixed;
-			top: 0;
-			right: 0;
-			height: 100%;
-			width: 100%;
-			background: rgba(255,255,255,0.8);
-			opacity: 0;
-			visibility: hidden;
-			flex-flow: column wrap;
-			text-align: center;
-			justify-content: space-around;
-			transition: all 0.5s;
-			transform: scale(1.2);
-			z-index: 99;
-			li {
-				padding: 15px 0;
-				font-size: 2rem;
+	}
+	header .mainNav .fa {
+		// display: none;
+		display: block;
+		cursor: pointer;
+	}
+	
+ 	// HAMBURGER MENU //
+	header ul#menu-main-navigation {
+		position: fixed;
+		top: 0;
+		right: 0;
+		height: 50%;
+		width: 100%;
+		background: rgba(68, 68, 68, 0.9);
+		opacity: 0;
+		visibility: hidden;
+		flex-flow: column wrap;
+		text-align: center;
+		justify-content: space-around;
+		transition: all 0.5s;
+		transform: scale(1.2);
+		z-index: 900;
+		li {
+			padding: 15px 0;
+			font-size: 2rem;
+		}
+			a {
+				color: $orchid;
+				&:hover {
+					background: $white;
+				}
 			}
-				a {
-					color: $orchid;
-				}
-		}
-		ul#menu-main-navigation.show {
-			opacity: 1;
-			visibility: visible;
-			transform: scale(1);
-		}
-
-		.fa {
-			display: none;
-			cursor: pointer;
-		}
-
-		.fa-bars {
-			position: relative;
-			z-index: 100;
-		}
-		// END HAMBURGER //
 	}
+	header ul#menu-main-navigation.show {
+		opacity: 1;
+		visibility: visible;
+		transform: scale(1);
+	}
+
+	header .fa-bars {
+		font-size: 2.5rem;
+		position: relative;
+		z-index: 999;
+	}
+	// END HAMBURGER //
+	header .heroText {
+		height: 90vh;
+		z-index: 5;
+		h1 {
+			font-size: 8rem;
+			z-index:1;
+		}
+		h3 {
+			font-size: 2rem;
+		}
+	}	
+	
+	// ABOUT SECTION //
 	.about {
-	    flex-direction: column;
-	    align-items: center;
-	    justify-content: space-around;
-	    .aboutContainer {
-	    	.headshot {
-	    	    width: 100%;
-	    	    margin: 0 auto;
-	    	}
-	    	.aboutDesc {
-	    	    width: 100%;
-	    	}
-	    }
-	}
-	.portfolioItem {
-	    flex-direction: column;
-	    figure {
-	    	width: 100%;
-	    }
-	    .portfolioContent {
-	    	width: 100%;
+		.aboutContainer {
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-around;
 		}
-    }
-	.contactContainer {
-	    flex-direction: column;
-	    .contactInfo {
+		.aboutContainer .headshot {
 		    width: 100%;
-	    }
-	    .contactForm {
-	        width: 100%;
+		    margin: 0 auto;
+		    text-align: center;
+		}
+		.aboutContainer .headshot img {
+			width: 50%;
+		}
+		.aboutContainer .aboutDesc {
+		    width: 100%;
+		    margin: 0;
+		} 
+		.aboutContainer .aboutDesc h3 {
+			text-align: center;
+		}
+		.aboutContainer .aboutDesc p {
+		    padding: 0 20px;
+		}	
+	}
 
-			form {
-				.formInputs {
-					input[type=text], input[type=email] {
-						width: 300px;
-					}
-				}
-				.formMessage {
-					textarea {
-						width: 100%;
-						margin-top: 5px;
-						height: auto;
-						padding: 5px 10px;
-						border: 2px solid $orchid;
-					    border-radius: 2px;
-					    font-size: 1.4rem;
-					    line-height: 1.5rem;
-					    color: $darkgray;
-					}
-				}
+	// PORTFOLIO SECTION //
+	.portfolio {
+		.portfolioContainer .portfolioItem {
+		    flex-direction: column;
+		}
+		.portfolioContainer .portfolioItem figure {
+	    	width: 100%;
+	    }
+	    .portfolioContainer .portfolioItem .portfolioContent {
+        	width: 100%;	
+        	min-height: 300px;
+        }
+        .portfolioContainer .portfolioItem:nth-child(even) {
+            flex-direction: column;
+        }
+	}
+	// CONTACT SECTION //
+	.contact {
+		.contactContainer {
+	    flex-direction: column;
+		}
+		.contactContainer .contactInfo {
+		    width: 100%;
+		    min-height: 275px;
+		    margin-bottom: 25px;
+	    }
+	    .contactContainer .contactInfo h3 {
+		    margin-bottom: 25px;
+		}
+	    .contactContainer .contactForm {
+	        width: 70%;
+        }
+        .contactContainer .contactForm form .formInputs {
+        	flex-direction: column;
+			input[type=text], input[type=email] {
+				width: 100%;
+				margin: 0;
 			}
 		}
 	}
 }
 
-/* Landscape phone to portrait tablet */
+	// 	// HAMBURGER MENU //
+	// 	ul#menu-main-navigation {
+	// 		position: fixed;
+	// 		top: 0;
+	// 		right: 0;
+	// 		height: 100%;
+	// 		width: 100%;
+	// 		background: rgba(255,255,255,0.8);
+	// 		opacity: 0;
+	// 		visibility: hidden;
+	// 		flex-flow: column wrap;
+	// 		text-align: center;
+	// 		justify-content: space-around;
+	// 		transition: all 0.5s;
+	// 		transform: scale(1.2);
+	// 		z-index: 99;
+	// 		li {
+	// 			padding: 15px 0;
+	// 			font-size: 2rem;
+	// 		}
+	// 			a {
+	// 				color: $orchid;
+	// 			}
+	// 	}
+	// 	ul#menu-main-navigation.show {
+	// 		opacity: 1;
+	// 		visibility: visible;
+	// 		transform: scale(1);
+	// 	}
+
+	// 	.fa-bars {
+	// 		position: relative;
+	// 		z-index: 100;
+	// 	}
+	// 	// END HAMBURGER //
+	// }
+
+	
+
+
+	
+	
+ 
+	
+
+
+//Landscape phone to portrait tablet
 @media (max-width: 768px) {
 	
+	// CONTACT SECTION //
+	.contact {
+	    .contactContainer .contactForm {
+	        width: 100%;
+        }
+        .contactContainer .contactForm form .formInputs {
+        	flex-direction: column;
+			input[type=text], input[type=email] {
+				width: 100%;
+				margin: 0;
+			}
+		}
+	}
+	.socialFooter ul {
+	    margin: 0 15%;
+	}
 }
 
-/* Landscape phones and down */
+// Landscape phones and down
 @media (max-width: 480px) {
+	header .heroText {
+		height: 70vh;
+		z-index: 5;
+		h1 {
+			font-size: 4rem;
+			z-index:1;
+		}
+		h3 {
+			font-size: 1.6rem;
+		}
+	}	
 }
 
 
