@@ -269,7 +269,7 @@ header {
 		    flex-direction: column;
 	        position: relative;
 		    h3 {
-		    	margin-bottom: 45px;
+		    	margin-bottom: 30px;
 		    	
 		    }
 		    span {
@@ -304,6 +304,9 @@ header {
 		.contactForm {
 			width: calc(70% - 10px);
 			margin-left: 10px;
+			h3 {
+			    margin-bottom: 30px;
+			}
 			form {
 				.formInputs {
 					display: flex;
@@ -312,9 +315,9 @@ header {
 					    margin-top: 20px;
 					}
 					input[type=text], input[type=email] {
-						width: calc(100% - 10px);
+						width: 325px;
 						height: 35px;
-						margin-top: 5px;
+						margin-bottom: 10px;
 						padding: 5px 10px;
 						border: 2px solid $orchid;
 					    border-radius: 2px;
@@ -335,7 +338,7 @@ header {
 					}
 					textarea {
 						width: 100%;
-						margin-top: 5px;
+						margin-bottom: 10px;
 						height: auto;
 						padding: 5px 10px;
 						border: 2px solid $orchid;
@@ -549,14 +552,15 @@ footer {
 	    .contactContainer .contactInfo h3 {
 		    margin-bottom: 25px;
 		}
-	    .contactContainer .contactForm {
-	        width: 70%;
+		.contactContainer .contactForm {
+			margin: 0;
+			width: 70%;
         }
         .contactContainer .contactForm form .formInputs {
         	flex-direction: column;
 			input[type=text], input[type=email] {
 				width: 100%;
-				margin: 0;
+				margin-bottom: 10px;
 			}
 		}
 	}

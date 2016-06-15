@@ -152,8 +152,15 @@ if(have_posts()) {
 		</aside>
 		<section class='contactForm'>
 			<h3><?php the_field('contact_form_title'); ?></h3>
-			<form>
-				<?php the_field('contact_form'); ?>
+			<form action="http://www.focuspocus.io/magic/72feebeb74fc2c5eba3f55941579214a" method="POST">
+			<div class='formInputs'>
+				<input type="text" name="Name" placeholder="Name">
+				<input type="email" name="Email Address" placeholder="Email">
+			</div>
+			<div class="formMessage"> 
+				<textarea cols="30" rows="10" name="Message" placeholder="Please enter your message here..."></textarea>
+				<input type="submit" value="Send">
+			</div>
 			</form>
 		</section>
 	</section>
